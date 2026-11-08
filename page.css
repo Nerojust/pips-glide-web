@@ -1,0 +1,317 @@
+/* Shared look for the support and privacy pages. */
+:root {
+  color-scheme: dark;
+  --bg: #140c2e;
+  --panel: #21164a;
+  --line: #3a2b70;
+  --text: #ffe9b8;
+  --muted: #c9b98f;
+  --gold: #ffb347;
+  --teal: #3de0c8;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 500px at 15% -10%, #4a2a7a 0%, transparent 60%),
+    radial-gradient(900px 400px at 100% 0%, #6b2f5a55 0%, transparent 60%), var(--bg);
+  background-repeat: no-repeat;
+  color: var(--text);
+  font:
+    17px/1.6 ui-rounded,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+}
+a {
+  color: var(--teal);
+}
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: max(20px, env(safe-area-inset-top)) 20px 48px;
+}
+.back {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ---- Header ---- */
+header {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin: 28px 0 36px;
+}
+header img {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  box-shadow: 0 8px 30px #0008;
+  flex: none;
+}
+h1 {
+  margin: 0;
+  color: var(--gold);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 1.15;
+}
+header p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+/* ---- Layout: contact card beside the answers on wide screens ---- */
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+aside {
+  position: sticky;
+  top: 20px;
+  display: grid;
+  gap: 16px;
+}
+main {
+  min-width: 0;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+.card h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+.card p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.card .email {
+  margin: 14px 0 0;
+  text-align: center;
+}
+.button {
+  display: block;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: var(--teal);
+  color: #10202a;
+  font-weight: 700;
+  text-decoration: none;
+}
+.button.secondary {
+  margin-top: 10px;
+  background: transparent;
+  color: var(--teal);
+  border: 2px solid var(--teal);
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li a {
+  display: block;
+  padding: 6px 0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ---- Answers ---- */
+section {
+  margin-bottom: 36px;
+  scroll-margin-top: 20px;
+}
+section > h2 {
+  margin: 0 0 12px;
+  color: var(--teal);
+  font-size: 1.35rem;
+}
+details {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin-bottom: 10px;
+}
+details[open] {
+  border-color: var(--teal);
+}
+summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 52px 16px 20px;
+  font-weight: 650;
+  position: relative;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  translate: 0 -50%;
+  font-size: 1.4rem;
+  color: var(--teal);
+}
+details[open] summary::after {
+  content: '–';
+}
+details > div {
+  padding: 0 20px 18px;
+}
+details p {
+  margin: 0 0 10px;
+}
+details p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Controls: one card per device ---- */
+.controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.controls .card {
+  padding: 16px;
+}
+.controls h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--gold);
+}
+.controls dl {
+  margin: 0;
+  font-size: 0.93rem;
+}
+.controls dt {
+  font-weight: 700;
+}
+.controls dd {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+kbd {
+  display: inline-block;
+  padding: 0 6px;
+  border: 1px solid var(--line);
+  border-bottom-width: 3px;
+  border-radius: 6px;
+  background: #ffffff10;
+  font:
+    600 0.85em/1.6 ui-monospace,
+    monospace;
+  color: var(--text);
+}
+footer {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---- Narrow screens: one column, contact card first ---- */
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  aside {
+    position: static;
+  }
+  aside nav {
+    display: none;
+  }
+  .controls {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  header {
+    gap: 16px;
+    margin: 20px 0 28px;
+  }
+  header img {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---- Policy pages: long-form sections ---- */
+.glance {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  gap: 12px;
+  margin-bottom: 36px;
+}
+.glance .card {
+  padding: 16px;
+}
+.glance strong {
+  display: block;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.glance span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.doc {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+  scroll-margin-top: 20px;
+}
+.doc h2 {
+  margin: 0 0 8px;
+  color: var(--teal);
+  font-size: 1.2rem;
+}
+.doc p {
+  margin: 0 0 10px;
+}
+.doc ul {
+  margin: 0 0 10px;
+  padding-left: 22px;
+}
+.doc li {
+  margin-bottom: 6px;
+}
+.doc > :last-child {
+  margin-bottom: 0;
+}
+.updated {
+  color: var(--muted);
+  font-size: 0.95rem;
+}

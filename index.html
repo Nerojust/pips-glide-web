@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#6f93d6" />
+    <title>Pip's Glide</title>
+    <meta
+      name="description"
+      content="Pip's Glide: launch Pip from a sky island and glide as far as you can. A 3D flying game by Nerojust."
+    />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <style>#loader{z-index:20;color:#fff;background:linear-gradient(#6f93d6,#b9c8f0 55%,#ffd2b0);flex-direction:column;justify-content:center;align-items:center;gap:18px;font:600 18px Fredoka,sans-serif;transition:opacity .35s;display:flex;position:fixed;inset:0}#loader h1{letter-spacing:1px;text-shadow:0 3px 14px #7846a073;margin:0;font-size:40px}.loader-track{border:2px solid #ffffffb3;border-radius:8px;width:min(320px,70vw);height:12px;overflow:hidden}.loader-fill{background:linear-gradient(90deg,#ffd36b,#ff8a6b);width:1%;height:100%}#loader.loader-hide{opacity:0;pointer-events:none}#loader.loader-error .loader-track{display:none}</style>
+    <script type="module" crossorigin src="./assets/index-6Eo_oXvA.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/dist-WmVykzCl.js">
+    <link rel="modulepreload" crossorigin href="./assets/consent-status.enum-CdMsqkrY.js">
+    <link rel="modulepreload" crossorigin href="./assets/friends-pc7c630W.js">
+    <link rel="modulepreload" crossorigin href="./assets/definitions-BdWVgBTV.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-BsMWCaH0.css">
+  </head>
+  <body>
+    <div
+      id="loader"
+      role="progressbar"
+      aria-label="Loading"
+      aria-valuemin="1"
+      aria-valuemax="100"
+      aria-valuenow="1"
+    >
+      <h1>Pip's Glide</h1>
+      <div class="loader-track"><div class="loader-fill"></div></div>
+      <div class="loader-percent">1%</div>
+    </div>
+    <script src="./loader.js"></script>
+    <canvas id="game" aria-label="Pip's Glide"></canvas>
+    <div id="fade" aria-hidden="true"></div>
+    <div id="knob" hidden></div>
+    <div id="rotate" role="alert">↻<br />Turn your phone sideways to fly</div>
+  </body>
+</html>
